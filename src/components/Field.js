@@ -7,25 +7,32 @@ class Field extends React.Component {
         {this.props.elementName === "input" ? (
           <input
             className="form-control"
-            id={this.props.name}
             type={this.props.type}
             placeholder={this.props.placeholder}
             required="required"
             data-validation-required-message="Please enter your name."
             value={this.props.value}
-            onChange={(e) => this.props.onChange(e)}
+            onChange={this.props.onChange}
+            name={this.props.name}
+            onBlur={this.props.onBlur}
           />
         ) : (
           <textarea
             className="form-control"
-            id={this.props.name}
             placeholder={this.props.placeholder}
             required="required"
             data-validation-required-message="Please enter a message."
             value={this.props.value}
-            onChange={(e) => this.props.onChange(e)}
+            name={this.props.name}
+            onChange={this.props.onChange}
+            onBlur={this.props.onBlur}
           />
         )}
+        <p class="help-block text-danger">
+          {this.props.touched && this.props.error && (
+            <span>{this.props.error}</span>
+          )}
+        </p>
       </div>
     );
   }
