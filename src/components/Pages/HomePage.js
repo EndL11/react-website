@@ -5,6 +5,7 @@ import Services from "../Services";
 import About from "../About";
 import Team from "../Team";
 import Portfolio from "../Portfolio";
+import ContactPage from "./ContactPage";
 
 
 export default class HomePage extends React.Component {
@@ -16,6 +17,7 @@ export default class HomePage extends React.Component {
         <Portfolio />
         <About />
         <Team />
+        <ContactPage />
       </>
     );
   }
